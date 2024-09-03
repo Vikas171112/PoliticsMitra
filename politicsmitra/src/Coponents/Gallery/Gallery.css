@@ -1,0 +1,13 @@
+/* src/components/Gallery.css */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.gallery .card {
+  flex: 1 1 calc(33.333% - 1rem); /* 3 cards per row with some gap */
+  max-width: calc(33.333% - 1rem); /* 3 cards per row */
+}

@@ -1,0 +1,53 @@
+/* ProfileCard.css */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid red;
+  margin-right: 1rem;
+}
+
+.organization-name {
+  font-size: 1rem;
+  color: #555;
+  margin-left: 1rem;
+}
+
+.profile-info {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  /* border-radius: 50%; */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid red;
+  margin-right: 1rem;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  color: #333;
+  margin-left: 1rem;
+}

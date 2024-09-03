@@ -1,0 +1,48 @@
+.header-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  background-color: rgb(214 122 92);
+}
+.header-container .menu {
+  margin-left: 1rem;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.navlist ul {
+  display: flex;
+  gap: 1.8rem;
+}
+.navlist ul li {
+  list-style-type: none;
+}
+
+.navlist ul a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navlist ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.navlist ul a:hover {
+  color: rgb(242, 174, 174);
+}
+
+.navlist ul a:hover::after {
+  width: 100%;
+}

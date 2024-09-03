@@ -1,0 +1,33 @@
+/* src/components/Card.css */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-description {
+  margin: 0.5rem 0 0;
+  color: #555;
+}
