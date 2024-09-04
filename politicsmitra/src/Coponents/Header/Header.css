@@ -3,6 +3,9 @@
   gap: 4rem;
   align-items: center;
   background-color: rgb(214 122 92);
+  height: 4rem;
+  width: auto;
+  overflow-x: auto;
 }
 .header-container .menu {
   margin-left: 1rem;
@@ -11,9 +14,15 @@
   align-items: center;
   cursor: pointer;
 }
+.navlist {
+  margin-left: 10%;
+}
+
 .navlist ul {
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
 }
 .navlist ul li {
   list-style-type: none;
@@ -40,9 +49,47 @@
 }
 
 .navlist ul a:hover {
-  color: rgb(242, 174, 174);
+  color: rgb(238, 37, 37);
 }
 
 .navlist ul a:hover::after {
   width: 100%;
+}
+
+@media (max-width: 860px) {
+  .header-container {
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .header-container .menu {
+    font-size: 2rem;
+  }
+
+  .navlist {
+    margin-left: 2%;
+  }
+
+  .navlist ul {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 626px) {
+  .header-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .header-container .menu {
+    font-size: 2rem;
+  }
+
+  .navlist {
+    margin-left: 0%;
+  }
+
+  .navlist ul {
+    gap: 0.2rem;
+  }
 }

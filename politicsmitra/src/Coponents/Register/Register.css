@@ -1,0 +1,123 @@
+/* Ensure container fills viewport height */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Make sure the register-box doesn't get cut off */
+.register-box {
+  position: relative;
+  width: 80%;
+  max-width: 450px; /* Limits width on large screens */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Back arrow should always be visible */
+.back-arrow {
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+/* Heading should be visible on all screens */
+.register-box h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input group styling */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input,
+.input-group select {
+  width: 90%;
+  padding: 4.1px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+.image-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.image-upload-input {
+  display: none;
+}
+
+.plus-symbol {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 150px;
+  margin-top: 10px;
+}
+
+.no-image-text {
+  font-size: 16px;
+  color: #777;
+}
+.img {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.register-btn {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Ensure consistent margins and responsive design for larger screens */
+@media only screen and (min-width: 600px) {
+  .register-box {
+    max-width: 400px;
+  }
+
+  .back-arrow {
+    font-size: 1.75rem;
+  }
+
+  .register-box h2 {
+    font-size: 28px;
+  }
+}
+.input-group1 {
+  text-decoration: underline;
+}

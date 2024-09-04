@@ -50,7 +50,7 @@
 
 .menu-icon {
   margin-right: 10px; /* Space between icon and text */
-  font-size: 1.5rem; /* Adjust icon size if needed */
+  font-size: 1.5rem;
 }
 
 .close-button {
@@ -61,4 +61,17 @@
   background: none;
   font-size: 24px;
   cursor: pointer;
+}
+@media (max-width: 860px) {
+  .slide-menu {
+    position: fixed;
+    top: 0;
+    left: -60%;
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.5s ease-in-out;
+    z-index: 1000;
+  }
 }

@@ -6,6 +6,7 @@ import SlideMenu from "../SlideMenu/SlideMenu";
 import ImageIcon from "@mui/icons-material/Image";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import PortraitIcon from "@mui/icons-material/Portrait";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,21 +25,27 @@ function Header() {
         <MenuIcon />
       </div>
       <div className="Logo-container">
-        <a href="">
+        <Link to="/">
           <img src="" alt="noimage" />
-        </a>
+        </Link>
       </div>
       <div className="navlist">
         <ul>
-          <a href="">
-            <ImageIcon /> <li>Gallery</li>
-          </a>
-          <a href="">
-            <KeyboardVoiceIcon /> <li>Events</li>
-          </a>
-          <a href="">
-            <PortraitIcon /> <li>Adhikari</li>
-          </a>
+          <li>
+            <Link to="/gallery">
+              <ImageIcon /> Gallery
+            </Link>
+          </li>
+          <li>
+            <Link to="/events">
+              <KeyboardVoiceIcon /> Events
+            </Link>
+          </li>
+          <li>
+            <Link to="/padhadhikaripage">
+              <PortraitIcon /> Adhikari
+            </Link>
+          </li>
         </ul>
       </div>
       <SlideMenu isOpen={isMenuOpen} onClose={handleCloseMenu} />

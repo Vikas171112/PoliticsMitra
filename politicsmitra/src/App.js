@@ -1,13 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Coponents/Header/Header";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./Coponents/Homepage/Homepage";
+import PadAdhikariPage from "./Coponents/PadhAdhikari/PadAdhikariPage";
+import ListEvents from "./Coponents/Events/ListEvents";
+import Header from "./Coponents/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      <Homepage />
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/gallery" element={<Homepage />} />
+        <Route path="/padhadhikaripage" element={<PadAdhikariPage />} />
+        <Route path="/events" element={<ListEvents />} />
+      </Routes>
+    </Router>
   );
 }
 
