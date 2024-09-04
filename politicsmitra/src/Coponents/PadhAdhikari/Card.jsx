@@ -2,12 +2,12 @@ import React from "react";
 
 function Card({ name, details = [], imageUrl }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-start">
+    <div className=" rounded-lg shadow-md p-4  bg-gray-200 hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex items-start">
       {/* Actual image */}
       <img
         src={imageUrl}
         alt={name}
-        className="lg:w-50 lg:h-30 sm:w-40 sm:h-30 rounded-lg bg-gray-300 mr-4 object-cover"
+        className="lg:w-50 lg:h-30 sm:w-40 sm:h-30 rounded-lg  mr-4 object-cover"
       />
       <div className="flex-1">
         <h2 className="text-lg font-semibold mb-2">{name}</h2>

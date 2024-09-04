@@ -25,8 +25,8 @@ function Header() {
         <MenuIcon />
       </div>
       <div className="Logo-container">
-        <Link to="/">
-          <img src="" alt="noimage" />
+        <Link to="/gallery">
+          <h2>HSP</h2>
         </Link>
       </div>
       <div className="navlist">

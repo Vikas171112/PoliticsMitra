@@ -2,9 +2,9 @@
   display: flex;
   gap: 4rem;
   align-items: center;
-  background-color: rgb(214 122 92);
+  background-color: rgb(231 99 57);
   height: 4rem;
-  width: auto;
+  width: 100vw;
   overflow-x: auto;
 }
 .header-container .menu {
@@ -13,14 +13,19 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: white;
+}
+.header-container .Logo-container h2 {
+  color: white;
+  font-weight: bolder;
 }
 .navlist {
-  margin-left: 10%;
+  margin-left: 26%;
 }
 
 .navlist ul {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
 }
@@ -58,8 +63,9 @@
 
 @media (max-width: 860px) {
   .header-container {
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 1rem;
+    width: 100vw;
   }
 
   .header-container .menu {
@@ -71,13 +77,13 @@
   }
 
   .navlist ul {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 626px) {
   .header-container {
-    gap: 1rem;
+    gap: 2rem;
     padding: 0 0.5rem;
   }
 
@@ -90,6 +96,6 @@
   }
 
   .navlist ul {
-    gap: 0.2rem;
+    gap: 0.7rem;
   }
 }

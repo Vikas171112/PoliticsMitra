@@ -1,12 +1,12 @@
-/* src/components/Card.css */
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  min-width: 300px;
+  min-width: 350px; /* Reduced min-width to fit better on smaller screens */
   min-height: 200px;
+  padding: 16px;
 }
 
 .card:hover {

@@ -9,7 +9,9 @@ function App() {
   return (
     <Router>
       <Header />
+
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/gallery" element={<Homepage />} />
         <Route path="/padhadhikaripage" element={<PadAdhikariPage />} />
         <Route path="/events" element={<ListEvents />} />

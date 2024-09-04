@@ -31,7 +31,7 @@ function PadAdhikariPage() {
   );
 
   return (
-    <div className="lg:flex flex-col items-center min-h-screen ">
+    <div className="lg:flex flex-col items-center min-h-screen bg-white ">
       <div className="container mx-auto  w-full max-w-6xl">
         {/* Use the Searchbar component */}
         <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

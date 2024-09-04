@@ -5,10 +5,11 @@ import IosShareIcon from "@mui/icons-material/IosShare";
 import InfoIcon from "@mui/icons-material/Info";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ProfileCard from "../ProfileCard/ProfileCard";
+import logo from "../SlideMenu/logohjp.jpg";
 
 function SlideMenu({ isOpen, onClose }) {
   const profileData = {
-    logoSrc: "https://via.placeholder.com/50",
+    logoSrc: logo,
     organizationName: "Organization Name",
     profilePictureSrc: "https://via.placeholder.com/100",
     userName: "Vikas Kumar Jha",
