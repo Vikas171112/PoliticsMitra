@@ -1,123 +1,181 @@
-/* Ensure container fills viewport height */
 .register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: white;
-  margin: 0;
-  padding: 20px;
-  overflow: visible;
-  box-sizing: border-box;
+  height: auto;
+
+  padding: 20px; /* Add padding to ensure content doesn't hit screen edges */
 }
 
-/* Make sure the register-box doesn't get cut off */
 .register-box {
-  position: relative;
-  width: 80%;
-  max-width: 450px; /* Limits width on large screens */
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.register-title {
+  margin-bottom: 1rem;
+  color: #100f0f;
   text-align: center;
 }
 
-/* Back arrow should always be visible */
-.back-arrow {
-  font-size: 24px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-/* Heading should be visible on all screens */
-.register-box h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
+.register-paragraph {
+  margin-bottom: 1.5rem;
+  color: #555;
   text-align: center;
-  display: block;
-  width: 100%;
 }
+
 .register-form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input group styling */
-.input-group {
+.register-input-group {
   position: relative;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+  margin-bottom: 1rem;
 }
 
-.input-group input,
-.input-group select {
-  width: 90%;
-  padding: 4.1px;
-  border-radius: 6px;
+.register-input {
+  width: 100%;
+  padding: 10px 30px 10px 50px; /* Added more padding-left to create space for icons */
+  border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
-.image-upload-label {
+
+.register-input:focus,
+.register-input:focus ~ .register-input-label,
+.register-input:not(:placeholder-shown) ~ .register-input-label,
+.register-input.select:focus {
+  border-color: #ff5722;
+}
+
+.register-input::placeholder {
+  color: transparent;
+  /* Hide placeholder text */
+}
+
+.register-input:focus::placeholder {
+  color: transparent; /* Hide placeholder text when focused */
+}
+
+.register-input.focused::placeholder {
+  color: transparent;
+  /* Hide placeholder text when focused */
+}
+
+.register-input:focus ~ .register-input-label,
+.register-input:not(:placeholder-shown) ~ .register-input-label {
+  top: -3px;
+  left: 10px;
+  font-size: 14px;
+  color: #ecab83;
+  background-color: white;
+}
+
+.register-input-label {
+  position: absolute;
+  left: 30px; /* Adjust left to account for padding */
+  top: 50%;
+  color: #5b5757;
+  font-size: 14px;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 5px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.register-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust to ensure space for padding */
+  transform: translateY(-50%);
+  color: #ff5722;
+  font-size: 18px; /* Increase font-size for better visibility */
+}
+
+.register-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ff5722;
+}
+
+.image-upload-group {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
   cursor: pointer;
-  color: #007bff;
-  font-size: 16px;
-  text-align: center;
-}
-
-.image-upload-input {
-  display: none;
-}
-
-.plus-symbol {
-  font-size: 24px;
+  background-color: #ff5722;
+  color: white;
+  border-radius: 4px;
   margin-right: 10px;
+  text-align: center;
+  width: 90%; /* Ensure button takes full width */
+  box-sizing: border-box;
 }
 
-.preview-image {
-  max-width: 100%;
-  max-height: 150px;
+.add-image-icon {
+  cursor: pointer;
+  color: #ff5722;
+  font-size: 24px;
+}
+
+.image-preview-container {
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
 }
 
-.no-image-text {
-  font-size: 16px;
-  color: #777;
-}
-.img {
-  font-size: 20px;
-  font-weight: bold;
+.image-preview {
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .register-btn {
   background-color: #ff5722;
   color: white;
+  padding: 10px;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
   width: 100%;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
-/* Ensure consistent margins and responsive design for larger screens */
-@media only screen and (min-width: 600px) {
-  .register-box {
-    max-width: 400px;
-  }
-
-  .back-arrow {
-    font-size: 1.75rem;
-  }
-
-  .register-box h2 {
-    font-size: 28px;
-  }
+.register-btn:hover {
+  background-color: #e64a19;
 }
-.input-group1 {
-  text-decoration: underline;
+
+.selected-image-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-image {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid #ff5722;
 }

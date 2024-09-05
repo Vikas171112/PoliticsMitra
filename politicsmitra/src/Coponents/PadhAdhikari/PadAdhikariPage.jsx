@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import Searchbar from "../Searchbox/Searchbar"; // Import the Searchbar component
+import Header from "../Header/Header";
 
 function PadAdhikariPage() {
   const profiles = [
@@ -31,19 +32,22 @@ function PadAdhikariPage() {
   );
 
   return (
-    <div className="lg:flex flex-col items-center min-h-screen bg-white ">
-      <div className="container mx-auto  w-full max-w-6xl">
-        {/* Use the Searchbar component */}
-        <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <>
+      <Header />
+      <div className="lg:flex flex-col items-center min-h-screen bg-white ">
+        <div className="container mx-auto  w-full max-w-6xl">
+          {/* Use the Searchbar component */}
+          <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        {/* Profile Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          {filteredProfiles.map((profile, index) => (
-            <Card key={index} {...profile} />
-          ))}
+          {/* Profile Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+            {filteredProfiles.map((profile, index) => (
+              <Card key={index} {...profile} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -39,6 +39,7 @@ function Homepage() {
 
   return (
     <div>
+      <Header />
       <Searchbar />
       <Gallery cards={cardData} />
     </div>

@@ -1,51 +1,28 @@
-/* Center the login box */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f7f7;
+  background: #f4f4f4;
+}
+
+.paragraph-heading {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 2rem;
 }
 
 .login-box {
-  width: 350px;
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-text h2 {
-  font-size: 24px;
+.login-title {
   margin-bottom: 10px;
-}
-
-.welcome-text p {
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.language-select {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: white;
-  border: 1px solid gray;
-  width: 120px;
-  border-radius: 5px;
-  margin-left: 14px;
-}
-
-.language-select select {
-  border: 0;
-  text-decoration: underline;
-  background-color: white;
-  padding: 4px;
-  margin-left: 10px;
-  border-radius: 5px;
-  font-weight: bold;
 }
 
 .login-form {
@@ -58,44 +35,127 @@
   margin-bottom: 20px;
 }
 
-.input-group input {
-  width: 83%;
-  padding: 12px;
-  padding-left: 40px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-}
-
-.input-group input::placeholder {
-  color: #aaa;
-}
-
-.input-group .show-password {
+.input-group .icon {
   position: absolute;
   top: 50%;
-  right: 15px;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 20px; /* Adjust icon size */
+  pointer-events: none;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 40px; /* Add padding-left for icon */
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  outline: none;
+  background: #fff;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Hide the default placeholder text */
+.input-group input::placeholder {
+  color: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 40px; /* Position label correctly next to the icon */
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px; /* Adjust label size */
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: #fff; /* Ensures the label background covers input background */
+  padding: 0 4px; /* Padding around the label to cover input's background */
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+  top: -4px;
+  left: 15px; /* Move label correctly above input field */
+  font-size: 12px;
+  color: #e59245;
+}
+
+.language-select-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 200px; /* Adjust width */
+  position: relative; /* Positioning context for the dropdown */
+}
+
+.language-select {
+  display: flex;
+  align-items: center;
+  padding: 3px; /* Reduce padding */
+}
+
+.language-select .icon {
+  color: #e73535;
+  font-size: 16px; /* Adjust icon size */
+  margin-right: 6px; /* Adjust margin */
+}
+
+.language-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 12px; /* Reduce font size */
+  color: #333;
+  flex: 1;
+  padding: 2px; /* Reduce padding */
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f4f0f0; /* Background color for select */
+}
+
+/* Style the dropdown options */
+.language-select select option {
+  background-color: #fff; /* Dropdown background */
+  color: #333; /* Text color */
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
   transform: translateY(-50%);
   cursor: pointer;
+  color: #999;
+  font-size: 20px; /* Adjust icon size */
+}
+
+.login-btn,
+.register-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .login-btn {
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
+  background-color: #ff5722; /* Orange color */
+  color: #fff;
 }
-
-.register-btn1 {
-  margin-top: 10px;
-  background: white;
-  color: black;
-  border: 1px solid gray;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
+.logregister-btn {
+  background-color: #ddd;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-radius: 8px;
+}
+.login-btn:hover,
+.register-btn:hover {
+  opacity: 0.8;
 }

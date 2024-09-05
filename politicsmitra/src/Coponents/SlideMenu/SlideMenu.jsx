@@ -1,5 +1,5 @@
-// SlideMenu.js
 import React from "react";
+import { useNavigate } from "react-router-dom"; // For navigation
 import "./SlideMenu.css";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import InfoIcon from "@mui/icons-material/Info";
@@ -8,12 +8,23 @@ import ProfileCard from "../ProfileCard/ProfileCard";
 import logo from "../SlideMenu/logohjp.jpg";
 
 function SlideMenu({ isOpen, onClose }) {
+  const navigate = useNavigate(); // Hook for navigation
+
   const profileData = {
     logoSrc: logo,
     organizationName: "Organization Name",
     profilePictureSrc: "https://via.placeholder.com/100",
     userName: "Vikas Kumar Jha",
   };
+
+  const handleLogout = () => {
+    // Clear the token from localStorage
+    localStorage.removeItem("userToken");
+
+    // Redirect the user to the login page after logout
+    navigate("/login");
+  };
+
   return (
     <div className={`slide-menu ${isOpen ? "open" : ""}`}>
       <button className="close-button" onClick={onClose}>
@@ -40,7 +51,7 @@ function SlideMenu({ isOpen, onClose }) {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#" onClick={handleLogout}>
               <LogoutIcon className="menu-icon" />
               Logout
             </a>
