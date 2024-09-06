@@ -26,7 +26,7 @@ function Header() {
       </div>
       <div className="Logo-container">
         <Link to="/gallery">
-          <h2>HSP</h2>
+          <h2>HJP</h2>
         </Link>
       </div>
       <div className="navlist">

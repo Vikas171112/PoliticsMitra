@@ -18,13 +18,12 @@ function PadAdhikariPage() {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const token =
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbl9pZCI6IjY2MWEyZTgxNTZjNzA1NjQ3OTU0NjZiMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMjk5OTMzNiwiZXhwIjoxNzEzNjA0MTM2fQ.O6Be-0-d6rUFgyMIzi3PqHQeaj6LgBf_uw6lTKu6Zuw";
+       const accessToken = localStorage.getItem("accessToken");
         const response = await axios.get(
           "https://politicsmitra-backend.onrender.com/api/adhikari/all",
           {
             headers: {
-              Authorization: `Bearer ${token}`, // Correct string interpolation
+              Authorization: `Bearer ${accessToken}`, // Correct string interpolation
             },
           }
         );
