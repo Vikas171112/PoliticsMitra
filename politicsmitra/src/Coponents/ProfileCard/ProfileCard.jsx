@@ -17,7 +17,7 @@ const ProfileCard = ({
       </div>
       <div className="profile-info">
         <img
-          src={profilePictureSrc}
+          src={profilePictureSrc || "https://via.placeholder.com/100"}
           alt="User Profile"
           className="profile-picture"
         />
@@ -27,11 +27,11 @@ const ProfileCard = ({
   );
 };
 
-// ProfileCard.propTypes = {
-//   logoSrc: PropTypes.string.isRequired,
-//   organizationName: PropTypes.string.isRequired,
-//   profilePictureSrc: PropTypes.string.isRequired,
-//   userName: PropTypes.string.isRequired,
-// };
+ProfileCard.propTypes = {
+  logoSrc: PropTypes.string.isRequired,
+  organizationName: PropTypes.string.isRequired,
+  profilePictureSrc: PropTypes.string,
+  userName: PropTypes.string.isRequired,
+};
 
 export default ProfileCard;

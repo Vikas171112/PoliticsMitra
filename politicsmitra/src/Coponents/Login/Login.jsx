@@ -28,8 +28,11 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("userToken", data.token);
-        navigate("/");
+        localStorage.setItem("accessToken", data.accessToken);
+        if (data.profilePicture) {
+          localStorage.setItem("profilePicture", data.profilePicture);
+        }
+        navigate("/gallery");
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || "Login failed. Please try again.");

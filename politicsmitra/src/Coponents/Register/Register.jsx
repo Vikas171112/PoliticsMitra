@@ -89,7 +89,10 @@ const Register = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Registration successful:", data);
+        if (selectedImage) {
+          const imageUrl = URL.createObjectURL(selectedImage);
+          localStorage.setItem("profilePicture", imageUrl); // Store image in localStorage
+        }
         navigate("/login");
       } else {
         console.error("Registration failed");

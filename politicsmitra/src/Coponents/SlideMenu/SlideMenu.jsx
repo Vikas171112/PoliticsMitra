@@ -1,27 +1,29 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
-import "./SlideMenu.css";
-import IosShareIcon from "@mui/icons-material/IosShare";
-import InfoIcon from "@mui/icons-material/Info";
-import LogoutIcon from "@mui/icons-material/Logout";
+import { useNavigate } from "react-router-dom";
+import {
+  Logout as LogoutIcon,
+  Info as InfoIcon,
+  Share as IosShareIcon,
+} from "@mui/icons-material";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import logo from "../SlideMenu/logohjp.jpg";
+import "./SlideMenu.css";
 
 function SlideMenu({ isOpen, onClose }) {
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
+  const profilePictureSrc =
+    localStorage.getItem("profilePicture") || "https://via.placeholder.com/100";
 
   const profileData = {
     logoSrc: logo,
     organizationName: "Organization Name",
-    profilePictureSrc: "https://via.placeholder.com/100",
+    profilePictureSrc,
     userName: "Vikas Kumar Jha",
   };
 
   const handleLogout = () => {
-    // Clear the token from localStorage
-    localStorage.removeItem("userToken");
-
-    // Redirect the user to the login page after logout
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("profilePicture");
     navigate("/login");
   };
 
