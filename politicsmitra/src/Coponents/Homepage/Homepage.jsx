@@ -1,47 +1,17 @@
-import React from "react";
-import Gallery from "../Gallery/Gallery";
+import React, { useState } from "react";
 import Header from "../Header/Header";
 import Searchbar from "../Searchbox/Searchbar";
+import Gallery from "../Gallery/Gallery";
 
 function Homepage() {
-  const cardData = [
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 1",
-      description: "This is the description for Card 1.",
-    },
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 2",
-      description: "This is the description for Card 2.",
-    },
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 3",
-      description: "This is the description for Card 3.",
-    },
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 4",
-      description: "This is the description for Card 4.",
-    },
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 5",
-      description: "This is the description for Card 5.",
-    },
-    {
-      image: "https://via.placeholder.com/300x200",
-      title: "Card 6",
-      description: "This is the description for Card 6.",
-    },
-  ];
+  const [searchTerm, setSearchTerm] = useState(""); // Search state
 
   return (
     <div>
       <Header />
-      <Searchbar />
-      <Gallery cards={cardData} />
+      <Searchbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {/* Pass searchTerm to Gallery */}
+      <Gallery searchTerm={searchTerm} />
     </div>
   );
 }

@@ -18,7 +18,7 @@ function PadAdhikariPage() {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-       const accessToken = localStorage.getItem("accessToken");
+        const accessToken = localStorage.getItem("accessToken");
         const response = await axios.get(
           "https://politicsmitra-backend.onrender.com/api/adhikari/all",
           {
